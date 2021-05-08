@@ -11,7 +11,7 @@ where [options] is:
 1. "-i" or "--input" -> path to input file
 1. "-o" or "--output" -> path to output file
 
-## Examles
+## Examples
 **encode**
 ```bash
 $ node index.js -a encode -s 7 -i "input.txt" -o "output.txt"
