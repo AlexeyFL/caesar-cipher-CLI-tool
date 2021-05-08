@@ -7,11 +7,11 @@
 Print in command line "node index.js [options]",  
 where [options] is:  
 1. "-s" or "--shift" -> a shift, must be positive or negative integer(required)
-1. "-a" or "--action" -> an action, must be only encode/decode(requred)
+1. "-a" or "--action" -> an action, must be only encode/decode(required)
 1. "-i" or "--input" -> path to input file
 1. "-o" or "--output" -> path to output file
 
-## Examles
+## Examples
 **encode**
 ```bash
 $ node index.js -a encode -s 7 -i "input.txt" -o "output.txt"
