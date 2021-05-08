@@ -30,7 +30,7 @@ $ node index.js -a encode -s 7 -i "input.txt" -o "output.txt"
 $ node index.js -a decode -s 7 -i "input.txt" -o "output.txt"
 ```
 >input.txt
->`This is secret. Message about "_" symbol!`
+>`Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!`
 
 >output.txt
-> `Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!`
+> `This is secret. Message about "_" symbol!`
