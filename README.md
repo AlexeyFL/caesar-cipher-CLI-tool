@@ -1,1 +1,1 @@
-# Caesar cipher
+# Caesar cipher CLI tool
