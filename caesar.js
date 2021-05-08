@@ -47,9 +47,3 @@ export default class Caesar {
     return this.str.join('');
   }
 }
-
-const caesar = new Caesar(alphabet);
-
-console.log(
-  caesar.cipher(-7, 'encode', 'This is secret. Message about "_" symbol!')
-);

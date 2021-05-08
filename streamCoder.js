@@ -10,12 +10,10 @@ export default class StreamCoder extends Transform {
   _transform(chunk, encoding, callback) {
     try {
       const resultString = `${chunk.toString('utf8')}\n`;
-      console.log('stream',  getCommand(+options.shift))
-      console.log('stream2',  +options.shift)
       callback(
         null,
         caesar.cipher(
-          +getCommand(options.shift),
+          +options.shift,
           getCommand(options.action),
           resultString
         )

@@ -29,25 +29,14 @@ function validateCommands() {
     generateError(new Error('Error: action must be encode or decode!'));
   }
 
-
-
   if (!getCommand(options.shift)) {
     generateError(new Error('Error: -s or --shift is required!'));
   }
   if (!Number(options.shift)) {
-    generateError(new Error('Error: -s or --shift must be integer'));
-  }
-  
-
-
-  if (!fs.existsSync(inputFile) && !!inputFile) {
-    generateError(new Error(`Error: "${inputFile}" is a wrong path to file`));
-  }
-  if (!fs.existsSync(outputFile) && !!outputFile) {
-    generateError(new Error(`Error: "${outputFile}" is a wrong path to file`));
+    generateError(new Error('Error: -s or --shift must be integer!'));
   }
 
-  // check files
+  // input
 
   if (inputFile) {
     fs.access(inputFile, fs.constants.R_OK, (err) =>
@@ -56,8 +45,19 @@ function validateCommands() {
       )
     );
   }
+
+  if (!fs.existsSync(inputFile) && !!inputFile) {
+    generateError(new Error(`Error: "${inputFile}" is a wrong path to file`));
+  }
+
+  // output
+  if (!fs.existsSync(outputFile) && !!outputFile) {
+    console.error(`Error: "${outputFile}" is a wrong path to output file`);
+    process.exit(1);
+  }
+
   if (outputFile) {
-    fs.access(outputFile, fs.constants.R_OK, (err) =>
+    fs.access(outputFile, fs.constants.W_OK, (err) =>
       generateError(
         err ? new Error(`error: ${outputFile} is not readable`) : err
       )
